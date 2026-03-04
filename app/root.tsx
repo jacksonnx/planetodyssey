@@ -45,6 +45,22 @@ export default function App() {
   return <Outlet />;
 }
 
+const navLinks = [
+  { label: "Home", href: "/" },
+  { label: "Games", href: "/" }
+]
+
+export function Navigation() {
+  return (
+    <nav className="h-12 bg-blue-900 flex flex-row justify-center items-center">
+      <h1 className="text-2xl">MarioDB</h1>
+      <ul className="flex flex-row justify-center items-center m-5">{navLinks.map(({ label, href }) => (
+        <li key={label}><a href={href}>{label}</a></li>
+      ))}</ul>
+    </nav>
+  );
+}
+
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   let message = "Oops!";
   let details = "An unexpected error occurred.";
