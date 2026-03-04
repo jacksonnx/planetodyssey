@@ -25,7 +25,7 @@ export default function Home() {
         <h1 className="text-4xl text-center">Did you know?</h1>
         <div className="mt-10 flex flex-row justify-center items-center gap-20">
           <p className="w-1/2 text-2xl text-center">Super Mario Odyssey is the 29th best-selling video game of all time, and the 13th best-selling Nintendo game.<sup><Link to="https://en.wikipedia.org/wiki/List_of_best-selling_video_games" target="_blank" className="hover:text-gray-300 transition-colors">[1]</Link></sup></p>
-          <img src="/public/smo-box-art.jpg" alt="Super Mario Odyssey" className="block-100 rounded-2xl" />
+          <img src="/public/smo-box-art.png" alt="Super Mario Odyssey" className="block-100 rounded-2xl" />
         </div>
       </div>
       <Footer />
