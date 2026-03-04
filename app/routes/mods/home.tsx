@@ -3,7 +3,7 @@ import { Navigation, Footer } from "app/exports"
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "MarioDB - Mods" }
+    { title: "Planet Odyssey - Mods" }
   ];
 }
 
