@@ -1,5 +1,6 @@
 import {
   isRouteErrorResponse,
+  Link,
   Links,
   Meta,
   Outlet,
@@ -47,7 +48,8 @@ export default function App() {
 
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "Games", href: "/" }
+  { label: "Games", href: "/games" },
+  { label: "Mods", href: "/mods" }
 ]
 
 export function Navigation() {
@@ -55,7 +57,7 @@ export function Navigation() {
     <nav className="h-12 bg-blue-900 flex flex-row justify-center items-center">
       <h1 className="text-2xl">MarioDB</h1>
       <ul className="flex flex-row justify-center items-center m-5">{navLinks.map(({ label, href }) => (
-        <li key={label}><a href={href}>{label}</a></li>
+        <li className="m-1 hover:text-gray-300 transition-colors" key={label}><Link to={href}>{label}</Link></li>
       ))}</ul>
     </nav>
   );
