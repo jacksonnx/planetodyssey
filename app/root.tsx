@@ -94,12 +94,9 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   }
 
   return (
-    <main>
-      <div className="h-screen w-screen flex flex-col justify-center items-center gap-1">
-        <h1 className="text-5xl">{message}</h1>
-        <p className="text-2xl">{details}</p>
-        <Link to="/" className="mt-5 w-30 h-10 bg-blue-800 rounded-4xl flex justify-center items-center hover:text-gray-300 transition-colors">Home</Link>
-      </div>
-    </main>
+    <div className="flex justify-center items-center mt-20 flex-col gap-1">
+      <h1 className="text-5xl">{message}</h1>
+      <p className="text-2xl">{details}</p>
+    </div>
   );
 }
