@@ -1,5 +1,5 @@
-import { Link, useParams } from "react-router";
-import { Footer, mods, Navigation, type Mod } from "app/exports";
+import { useParams } from "react-router";
+import { mods, type Mod } from "app/exports";
 import type { Route } from "../+types/home";
 
 export function meta({}: Route.MetaArgs) {
@@ -43,6 +43,6 @@ export function ModNotFound() {
 export default function Mod() {
   const { modId } = useParams();
   const mod = mods.find(instance => instance.id === Number(modId));
-  
+
   return mod ? <RenderMod mod={mod} /> : <ModNotFound />
 }

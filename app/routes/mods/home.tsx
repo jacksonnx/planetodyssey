@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import type { Route } from "../+types/home"
-import { Navigation, Footer, mods } from "app/exports"
+import { mods } from "app/exports"
 
 export function meta({}: Route.MetaArgs) {
   return [
