@@ -26,7 +26,8 @@ export const links: Route.LinksFunction = () => [
 
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "Mods", href: "/mods" }
+  { label: "Mods", href: "/mods" },
+  { label: "GitHub", href: "https://github.com/jacksonnx/planetodyssey", target: "_blank" }
 ]
 
 function Navigation() {
@@ -34,8 +35,8 @@ function Navigation() {
     <nav className="h-15 bg-blue-900 flex flex-row justify-center items-center">
       <h1 className="text-2xl">Planet Odyssey</h1>
       <ul className="flex flex-row justify-center items-center m-5">
-        {navLinks.map(({ label, href }) => (
-            <li className="m-1 hover:text-gray-300 transition-colors" key={label}><Link to={href}>{label}</Link></li>
+        {navLinks.map(({ label, href, target }) => (
+            <li className="m-1 hover:text-gray-300 transition-colors" key={label}><Link to={href} target={target === undefined ? "_self" : target}>{label}</Link></li>
         ))}
       </ul>
     </nav>
