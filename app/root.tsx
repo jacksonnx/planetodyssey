@@ -10,7 +10,6 @@ import {
 
 import type { Route } from "./+types/root";
 import "./app.css";
-import { Footer, Navigation } from "./exports";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -24,6 +23,32 @@ export const links: Route.LinksFunction = () => [
     href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
   },
 ];
+
+const navLinks = [
+  { label: "Home", href: "/" },
+  { label: "Mods", href: "/mods" }
+]
+
+function Navigation() {
+  return (
+    <nav className="h-15 bg-blue-900 flex flex-row justify-center items-center">
+      <h1 className="text-2xl">Planet Odyssey</h1>
+      <ul className="flex flex-row justify-center items-center m-5">
+        {navLinks.map(({ label, href }) => (
+            <li className="m-1 hover:text-gray-300 transition-colors" key={label}><Link to={href}>{label}</Link></li>
+        ))}
+      </ul>
+    </nav>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="bottom-0 w-screen h-10 bg-gray-800 flex flex-row justify-center items-center">
+      <p>&copy; Planet Odyssey 2026 - Not affiliated with Nintendo.</p>
+    </footer>
+  )
+}
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
